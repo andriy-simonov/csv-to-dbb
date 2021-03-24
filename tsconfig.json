@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "preserveConstEnums": true,
+    "strictNullChecks": true,
+    "sourceMap": true,
+    // doesn't work when set to true
+    "allowJs": false,
+    "target": "es5",
+    "outDir": ".build",
+    "moduleResolution": "node",
+    "lib": ["es2015", "DOM"],
+    "rootDir": "./",
+    // required by AWS JavaScript SDK
+    "esModuleInterop": true,
+    "types": ["node", "serverless", "jest"]
+  },
+  "include": [
+    "src/**/*.ts",
+    "serverless.ts"
+  ],
+  "exclude": [
+    "node_modules/**/*",
+    ".serverless/**/*",
+    ".vscode/**/*",
+    ".gitignore"
+  ]
+}
