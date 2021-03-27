@@ -5,8 +5,8 @@ import { Readable } from 'stream';
 
 const s3Client = new S3Client({ region: 'us-east-1', endpoint: 'http://localhost:4569', forcePathStyle: true, bucketEndpoint: false, maxAttempts: 3 });
 
-async function readFromStream(): Promise<Readable> {
-    const objectParams = { Bucket: 'csv-bucket', Key: 'test.csv' };
+async function readFromStream(key: string): Promise<Readable> {
+    const objectParams = { Bucket: 'csv-bucket', Key: key };
     // Get the name of the object from the Amazon S3 bucket.
     const data = await s3Client.send(new GetObjectCommand(objectParams));
 

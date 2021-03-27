@@ -19,6 +19,7 @@
     "@types/serverless": "^1.78.22",
     "jest": "^26.6.3",
     "serverless": "^2.31.0",
+    "serverless-dynamodb-local": "^0.2.39",
     "serverless-offline": "^6.8.0",
     "serverless-plugin-tree-shake": "^1.1.8",
     "serverless-plugin-typescript": "^1.1.9",
