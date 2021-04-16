@@ -1,0 +1,8 @@
+{
+  "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
+  "REGION": "us-east-1",
+  "CSV_S3_BUCKET": "csv-bucket-${self:provider.stage}",
+  "OBJECT_TO_REFORMAT": "test.csv",
+  "TRANSFORMED_OBJECT_PREFIX": "transformed",
+  "DYNAMODB_TABLE_NAME": "orders"
+}

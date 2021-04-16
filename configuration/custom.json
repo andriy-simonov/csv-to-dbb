@@ -1,0 +1,29 @@
+{
+  "deployment": { "bucket": "deployment-iey2ah" },
+  "s3": {
+    "stages": ["local"],
+    "start": {
+      "port": "4570",
+      "inMemory": "true",
+      "heapInitial": "200m",
+      "heapMax": "1g",
+      "migrate": "true",
+      "convertEmptyValues": "true",
+      "accessKeyId": "S3RVER",
+      "secretAccessKey": "S3RVER"
+    }
+  },
+    "dynamodb": {
+      "stages": ["local"],
+      "start": {
+        "port": "4570",
+        "inMemory": "true",
+        "heapInitial": "200m",
+        "heapMax": "1g",
+        "migrate": "true",
+        "convertEmptyValues": "true",
+        "accessKeyId": "S3RVER",
+        "secretAccessKey": "S3RVER"
+    }
+  }
+}

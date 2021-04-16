@@ -1,0 +1,10 @@
+{
+  "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
+  "REGION": "eu-central-1",
+  "S3_ENDPOINT": "http://localhost:4569",
+  "CSV_S3_BUCKET": "csv-bucket-${self:provider.stage}",
+  "OBJECT_TO_REFORMAT": "test.csv",
+  "TRANSFORMED_OBJECT_PREFIX": "transformed",
+  "DYNAMO_DB_ENDPOINT": "http://localhost:4570",
+  "DYNAMODB_TABLE_NAME": "orders"
+}
