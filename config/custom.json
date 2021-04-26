@@ -1,5 +1,4 @@
 {
-  "deployment": { "bucket": "deployment-iey2ah" },
   "s3": {
     "stages": ["local"],
     "start": {

@@ -14,10 +14,8 @@ const s3Client = new S3Client(config);
 async function readFromStream(bucket: string, objectKey: string): Promise<Readable> {
   console.info(`Start reading data from ${bucket}/${objectKey}`);
   const objectParams = { Bucket: bucket, Key: objectKey };
-  // Get the name of the object from the Amazon S3 bucket.
   const data = await s3Client.send(new GetObjectCommand(objectParams));
 
-  // Extract the body contents, a readable stream, from the returned data.
   return data.Body as Readable;
 }
 

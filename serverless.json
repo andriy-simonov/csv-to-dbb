@@ -1,0 +1,55 @@
+{
+  "service": "csv-to-ddb",
+  "frameworkVersion": "2",
+  "variablesResolutionMode": "20210219",
+  "configValidationMode": "warn",
+  "provider": {
+    "name": "aws",
+    "runtime": "nodejs14.x",
+    "lambdaHashingVersion": 20201221,
+    "logRetentionInDays": 3,
+    "deploymentBucket": {
+      "name": "my-deployment-bucket",
+      "maxPreviousDeploymentArtifacts": 1
+    },
+    "profile": "s3local",
+    "stage": "${opt:stage, 'local'}",
+    "region": "${self:provider.environment.REGION}",
+    "stackName": "${self:service}-${opt:stage, self:provider.stage, 'dev'}",
+    "environment": "${file(./config/environment-${self:provider.stage}.json)}",
+    "versionFunctions": false,
+    "eventBridge": { "useCloudFormation": true }
+  },
+  "functions": {
+    "transformCsv": {
+      "handler": "src/handler.transformCsv",
+      "maximumRetryAttempts": 1,
+      "role": "TransformCsvLambdaExecutionRole",
+      "events": [
+        {
+          "eventBridge": {
+            "schedule": "cron(0 2 * * ? *)"
+          }
+        }
+      ],
+      "timeout": 240,
+      "memorySize": 256
+    },
+    "importCsvToDynamoDb": {
+      "handler": "src/handler.importCsvToDynamoDb",
+      "maximumRetryAttempts": 1,
+      "role": "ImportCsvToDynamoDbLambdaExecutionRole",
+      "timeout": 900,
+      "memorySize": 256
+    }
+  },
+  "custom": "${file(config/custom.json)}",
+  "resources": "${file(./config/resources.json)}",
+  "plugins": [
+    "serverless-plugin-typescript",
+    "serverless-plugin-tree-shake",
+    "serverless-dynamodb-local",
+    "serverless-s3-local",
+    "serverless-offline"
+  ]
+}

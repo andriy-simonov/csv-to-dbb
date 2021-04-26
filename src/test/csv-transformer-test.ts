@@ -1,4 +1,4 @@
-import { rotateColumns } from '../csv-transformer';
+import { rotateColumns } from '../transformers/csv-transformer';
 
 
 test('CSV columns rotated one position', done => {
