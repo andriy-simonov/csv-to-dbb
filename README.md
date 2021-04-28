@@ -14,6 +14,20 @@ The csv-to-dbb project imports CSV data from a file in AWS S3 bucket to a Dynamo
 * Edit *config/resources.json* file to configure Dynamod DB table key schema.
 * Install Python and add environment variable `PYTHON=D:\Python\bin\Python.exe`
 * Run `yarn install` to install CSV for Node.js and AWS-SDK dependencies.
+### Test
+``` bash 
+# run unit tests in CLI mode 
+yarn test:unit:console 
+```
+``` bash
+# run unit tests in silent mode
+yarn test:unit
+```
+### Lints and fixes files
+``` bash
+# auto fix src files based on code style rules  
+yarn src:fix
+```
 
 ## Deploy
 In order to deploy the project, simply run the serverless deploy command with the stage option. For example:
