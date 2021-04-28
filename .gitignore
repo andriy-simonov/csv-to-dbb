@@ -6,4 +6,8 @@ jspm_packages
 .serverless
 
 # VSC
-.code-workspace
+*code-workspace
+
+# Yarn
+*yarn.lock
+*package-lock.json
