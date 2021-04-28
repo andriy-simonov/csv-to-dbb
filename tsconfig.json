@@ -12,7 +12,9 @@
     "rootDir": "./",
     // required by AWS JavaScript SDK
     "esModuleInterop": true,
-    "types": ["node", "serverless", "jest"]
+    "types": ["node", "serverless", "jest"],
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
   },
   "include": [
     "src/**/*.ts",

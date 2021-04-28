@@ -5,6 +5,11 @@
   "author": "Andriy Simonov",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "src:fix": "eslint --config ./.eslintrc.json --fix ./src --ext .js,.ts,.vue,.d.ts",
+    "test:unit:console": "jest --watch --runInBand --detectOpenHandles",
+    "test:unit": "jest --silent --runInBand --detectOpenHandles"
+  },
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.13.0",
     "@aws-sdk/client-s3": "^3.13.0",
@@ -24,6 +29,7 @@
     "@typescript-eslint/parser": "^4.20.0",
     "eslint": "^7.23.0",
     "jest": "^26.6.3",
+    "jest-decorator": "^1.0.1",
     "joi": "^17.4.0",
     "serverless": "^2.31.0",
     "serverless-dynamodb-local": "^0.2.39",

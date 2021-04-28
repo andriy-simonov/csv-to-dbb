@@ -12,12 +12,28 @@ The csv-to-dbb project imports CSV data from a file in AWS S3 bucket to a Dynamo
 * Edit *serverless.json* to set the deployment bucket a unique name.
 * Edit *config/environment-${opt.stage}.json* to set the region, a name of a file to transform, a prefix for the transformed file, bucket, and table names.
 * Edit *config/resources.json* file to configure Dynamod DB table key schema.
+* Install Python and add environment variable `PYTHON=D:\Python\bin\Python.exe`
 * Run `yarn install` to install CSV for Node.js and AWS-SDK dependencies.
+### Test
+``` bash 
+# run unit tests in CLI mode 
+yarn test:unit:console 
+```
+``` bash
+# run unit tests in silent mode
+yarn test:unit
+```
+###  Coding conventions
+``` bash
+# auto fix src files based on code style rules  
+yarn src:fix
+```
 
 ## Deploy
 In order to deploy the project, simply run the serverless deploy command with the stage option. For example:
-
-    serverless deploy --stage staging
+``` bash
+serverless deploy --stage staging
+```
 
 ## Workflow
 There is a CloudWatch rule that triggers TransformCsvLambdaFunction. The function takes a file from an S3 bucket, transforms data, and puts it to a file in the same bucket. The name of a new file is concatenated prefix and the source file name.

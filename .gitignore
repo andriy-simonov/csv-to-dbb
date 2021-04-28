@@ -4,3 +4,10 @@ jspm_packages
 
 # Serverless directories
 .serverless
+
+# VSC
+*code-workspace
+
+# Yarn
+*yarn.lock
+*package-lock.json
