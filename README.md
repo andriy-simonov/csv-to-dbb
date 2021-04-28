@@ -23,7 +23,7 @@ yarn test:unit:console
 # run unit tests in silent mode
 yarn test:unit
 ```
-### Lints and fixes files
+###  Coding conventions
 ``` bash
 # auto fix src files based on code style rules  
 yarn src:fix
@@ -31,8 +31,9 @@ yarn src:fix
 
 ## Deploy
 In order to deploy the project, simply run the serverless deploy command with the stage option. For example:
-
-    serverless deploy --stage staging
+``` bash
+serverless deploy --stage staging
+```
 
 ## Workflow
 There is a CloudWatch rule that triggers TransformCsvLambdaFunction. The function takes a file from an S3 bucket, transforms data, and puts it to a file in the same bucket. The name of a new file is concatenated prefix and the source file name.
