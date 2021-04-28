@@ -6,7 +6,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "src:fix": "eslint --config ./.eslintrc.js --fix ./src --ext .js,.ts,.vue,.d.ts",
+    "src:fix": "eslint --config ./.eslintrc.json --fix ./src --ext .js,.ts,.vue,.d.ts",
     "test:unit:console": "jest --watch --runInBand --detectOpenHandles",
     "test:unit": "jest --silent --runInBand --detectOpenHandles"
   },
