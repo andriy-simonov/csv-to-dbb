@@ -12,6 +12,7 @@ The csv-to-dbb project imports CSV data from a file in AWS S3 bucket to a Dynamo
 * Edit *serverless.json* to set the deployment bucket a unique name.
 * Edit *config/environment-${opt.stage}.json* to set the region, a name of a file to transform, a prefix for the transformed file, bucket, and table names.
 * Edit *config/resources.json* file to configure Dynamod DB table key schema.
+* Install Python and add environment variable `PYTHON=D:\Python\bin\Python.exe`
 * Run `yarn install` to install CSV for Node.js and AWS-SDK dependencies.
 
 ## Deploy
